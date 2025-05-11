@@ -8,6 +8,14 @@ By integrating with the OLAS decentralized AI agent ecosystem, RugHunter moves t
 
 Currently focused on analysis and alerting, RugHunter will soon support token actions (buy/sell) and enhanced risk scoring.
 
+
+## Roadmap 🗺️
+- **Buy/Sell Commands**: Implementation of direct trading capabilities through Telegram commands
+- **Voice Commands**: Integration of voice recognition for hands-free operation
+- **Heroku Deployment**: Cloud deployment for improved reliability and scalability
+- **Enhanced Analytics**: More detailed token analysis and risk assessment features
+- **Community Features**: User feedback and community-driven improvements
+
 ## Setup
 Run `pip install -r requirements.txt`
 Copy .env.example to .env and fill in the variables.
