@@ -21,7 +21,7 @@ I'm <b>RugHunter</b>, your AI-powered token analysis bot! I offer several featur
 » <b>...and much more coming soon!</b>
 
 <b>🕹️ Commands</b>
-<code>/search &lt;token_address&gt;</code> — Analyze a token
+<code>/predict &lt;token_address&gt;</code> — Analyze a token
 <code>/about</code> — Learn more about RugHunter
 <code>/help</code> — How to use the bot
 
@@ -66,13 +66,12 @@ async def predict(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 # mensagens comuns
 async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    await update.message.reply_text("Send /start or /search <token> to start!")
+    await update.message.reply_text("Send /start or /predict <token> to start!")
 
 if __name__ == '__main__':
     app = ApplicationBuilder().token(TOKEN).build()
 
-    app.add_handler(CommandHandler("start", start))
-    app.add_handler(CommandHandler("search", search))
+    app.add_handler(CommandHandler("start", start)) 
     app.add_handler(CommandHandler("predict", predict)) 
     app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, handle_message))
 
