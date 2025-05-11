@@ -1,5 +1,8 @@
 from mech_client.marketplace_interact import marketplace_interact
-import asyncio
+import nest_asyncio
+
+# Apply nest_asyncio at the module level
+nest_asyncio.apply()
 
 async def askMech(
     prompt_text: str,
@@ -24,9 +27,6 @@ async def askMech(
         str: The result of the interaction
     """
     try:
-        # Get the current event loop
-        loop = asyncio.get_running_loop()
-        
         # Run the marketplace interaction in the current loop
         result = await marketplace_interact(
             prompt=prompt_text,
@@ -36,6 +36,7 @@ async def askMech(
             chain_config=chain_config,
             private_key_path=private_key_path,
         )
+
         return result
     except Exception as e:
         return f"Error getting prediction: {str(e)}"
